@@ -1,0 +1,9 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+}
+
+.charCard {
+    width: 35%;
+}
