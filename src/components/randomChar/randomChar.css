@@ -1,0 +1,31 @@
+.Dead {
+    color       : red;
+    font-size   : 10px;
+    margin-right: 5px;
+}
+
+.Alive {
+    font-size   : 10px;
+    margin-right: 5px;
+    color       : greenyellow;
+}
+
+.unknown {
+    font-size   : 10px;
+    margin-right: 5px;
+}
+
+.span__circle {
+    display    : flex;
+    align-items: center;
+}
+
+.random {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin: 15px;
+}

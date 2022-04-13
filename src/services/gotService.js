@@ -13,11 +13,22 @@ export default class GotService {
 
     getAllCharacters = async () => {
         const res = await this.getResource('/character')
-        return res
+        return res.map(this._transformCharacter)
     }
 
-    getCharacter = async (id) => {
+    async getCharacter(id) {
         const res = await this.getResource(`/character/${id}`)
-        return res
+        return this._transformCharacter(res)
+    }
+
+    _transformCharacter(char) {
+        return {
+            name: char.name,
+            gender: char.gender,
+            status: char.status,
+            image: char.image,
+            species: char.species,
+            type: char.type || "sorry no data :("
+        }
     }
 }
