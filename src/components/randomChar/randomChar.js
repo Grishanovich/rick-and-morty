@@ -27,6 +27,7 @@ export default class RandomChar extends Component {
             .then(this.onCharLoaded)
     }
 
+
     render() {
 
         return (

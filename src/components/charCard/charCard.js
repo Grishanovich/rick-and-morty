@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GotService from "../../services/gotService";
-import { CardBody, CardImg, Card, CardTitle, CardText, CardSubtitle, List } from "reactstrap";
+import { CardBody, CardImg, Card, CardTitle, CardText, CardSubtitle, } from "reactstrap";
 import { FaCircle } from 'react-icons/fa';
 import './charCard.css'
 
@@ -9,7 +9,7 @@ export default class RandomChar extends Component {
     gotService = new GotService()
 
     state = {
-        char: {},
+        char: {}
     }
 
     componentDidMount() {
@@ -29,7 +29,7 @@ export default class RandomChar extends Component {
 
     render() {
 
-        const { char: { name, gender, status, image, species, type } } = this.state
+        const { char: { name, gender, status, image, species, type, location } } = this.state
 
 
         return (
@@ -56,10 +56,13 @@ export default class RandomChar extends Component {
                             </span>
                         </CardSubtitle>
                         <CardText>
-                            Species: {species}
+                            <span className="text-gray">Last known location:</span> {location}
                         </CardText>
                         <CardText>
-                            Type: {type}
+                            <span className="text-gray">Species:</span> {species}
+                        </CardText>
+                        <CardText>
+                            <span className="text-gray">Type:</span> {type}
                         </CardText>
                     </CardBody>
                 </Card>

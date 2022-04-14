@@ -11,9 +11,9 @@ export default class GotService {
         return await res.json()
     }
 
-    getAllCharacters = async () => {
-        const res = await this.getResource('/character')
-        return res.map(this._transformCharacter)
+    getAllCharacters = async (id) => {
+        const res = await this.getResource(`/character/?page=${id}`)
+        return (Object.values(res)[1]);
     }
 
     async getCharacter(id) {
@@ -21,14 +21,15 @@ export default class GotService {
         return this._transformCharacter(res)
     }
 
-    _transformCharacter(char) {
+    _transformCharacter = (char) => {
         return {
             name: char.name,
             gender: char.gender,
             status: char.status,
             image: char.image,
             species: char.species,
-            type: char.type || "sorry no data :("
+            type: char.type || "sorry no data :(",
+            location: char.location.name
         }
     }
 }

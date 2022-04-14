@@ -11,7 +11,7 @@ export default class Header extends Component {
                 </h3>
                 <ul className="HeaderLinks">
                     <li>
-                        <a href="/">Characters</a>
+                        <a href="/">All characters</a>
                     </li>
                     <li>
                         <a href="/" >Locations</a>
